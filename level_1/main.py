@@ -8,7 +8,7 @@ URL = "http://158.69.76.135/level1.php"
 
 with requests.session() as session:
     """With with let's keep the session open"""
-    for i in range(10):
+    for i in range(4096):
         """We need the loop here like global to obtain
         each time the token code to vote"""
 
