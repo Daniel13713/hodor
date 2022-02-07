@@ -18,6 +18,7 @@ with requests.session() as session:
         for input in inputs:
             if input["name"] == "key":
                 token = input["value"]
+                break
         credentials = {"id": 3811, "holdthedoor": "submit", "key": token}
 
         vote = session.post(URL, data=credentials)
