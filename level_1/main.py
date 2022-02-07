@@ -19,3 +19,4 @@ with requests.session() as session:
                 "key": token
             }
         vote = session.post(URL, data=credentials)
+
