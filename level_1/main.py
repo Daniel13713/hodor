@@ -11,10 +11,11 @@ with requests.session() as session:
     """With with let's keep the session open
     We need the loop here like global to obtain
         each time the token code to vote"""
-    for i in range(4096):
+    for i in range(2):
 
         response = session.get(URL)
-        token = res.cookies["holdthedoor"]
+        token = response.cookies["HoldTheDoor"]
+        print("token:", token)
         credentials = {"id": 3811, "holdthedoor": "submit", "key": token}
 
         vote = session.post(URL, data=credentials)
