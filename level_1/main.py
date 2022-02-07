@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """This module use request and beautifulsoup library"""
-
-
 import requests
 
 
@@ -15,6 +13,9 @@ with requests.session() as session:
 
         response = session.get(URL)
         token = response.cookies["HoldTheDoor"]
-        credentials = {"id": 3811, "holdthedoor": "submit", "key": token}
-
+        credentials = {
+                "id": 3811,
+                "holdthedoor": "submit",
+                "key": token
+            }
         vote = session.post(URL, data=credentials)
