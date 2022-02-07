@@ -13,12 +13,7 @@ with requests.session() as session:
         each time the token code to vote"""
 
         response = session.get(URL)
-        soup = BeautifulSoup(response.content, "html.parser")
-        inputs = soup.find_all("input")
-        for input in inputs:
-            if input["name"] == "key":
-                token = input["value"]
-                break
+        token = res.cookies["holdthedoor"]
         credentials = {"id": 3811, "holdthedoor": "submit", "key": token}
 
         vote = session.post(URL, data=credentials)
