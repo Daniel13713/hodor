@@ -17,4 +17,5 @@ with requests.session() as session:
         credentials = {"id": 3811, "holdthedoor": "submit", "key": token}
 
         vote = session.post(URL, data=credentials)
-        print("Vote: {} -- status: {}".format(i + 1, vote.status_code))
+
+    print("Vote: {} -- status: {}".format(i + 1, vote.status_code))
